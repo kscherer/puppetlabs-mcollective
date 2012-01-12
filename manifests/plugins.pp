@@ -61,7 +61,7 @@ class mcollective::plugins(
     ensure      => present,
     type        => 'agent',
     ddl         => true,
-    application => false,
+    application => true,
   }
   mcollective::plugins::plugin { 'meta':
     ensure      => present,
@@ -76,6 +76,28 @@ class mcollective::plugins(
     ddl         => true,
     application => true,
   }
-
+  mcollective::plugins::plugin { 'puppetd':
+    ensure      => present,
+    type        => 'agent',
+    ddl         => true,
+    application => true,
+  }
+  mcollective::plugins::plugin { 'puppetral':
+    ensure      => present,
+    type        => 'agent',
+    ddl         => true,
+    application => false,
+  }
+  mcollective::plugins::plugin { 'shellcmd':
+    ensure      => present,
+    type        => 'agent',
+    ddl         => true,
+    application => true,
+  }
+  mcollective::plugins::plugin { 'etc_facts':
+    ensure      => present,
+    type        => 'agent',
+    ddl         => true,
+    application => true,
+  }
 }
-
